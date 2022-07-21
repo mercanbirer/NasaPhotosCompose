@@ -17,5 +17,3 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
     }
 }
-//ItXjX7uV4euA35LozgIfhSIK1st5pYPfl1qAsFl0
-//https://api.nasa.gov/planetary/apod?api_key=ItXjX7uV4euA35LozgIfhSIK1st5pYPfl1qAsFl0
