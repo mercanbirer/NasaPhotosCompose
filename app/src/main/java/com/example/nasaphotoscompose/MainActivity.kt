@@ -10,10 +10,24 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.nasaphotoscompose.ui.theme.NasaPhotosComposeTheme
+import com.example.nasaphotoscompose.view.NasaPhotosScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContent {
+            NasaPhotosComposeTheme {
+                val navController = rememberNavController()
+                NavHost(navController = navController, startDestination = "nasa_screen"){
+                    composable("nasa_screen") {
+                        NasaPhotosScreen(navController = navController)
+                    }
+                }
+            }
+        }
     }
 }
