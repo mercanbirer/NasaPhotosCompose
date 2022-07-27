@@ -3,6 +3,9 @@ package com.example.nasaphotoscompose.di
 import android.app.Application
 import android.content.Context
 import com.example.nasaphotoscompose.service.NasaApi
+import com.example.nasaphotoscompose.util.Key.API_KEY
+import com.example.nasaphotoscompose.util.Key.BASE_URL
+import com.example.nasaphotoscompose.util.Key.connectionTimeout
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,9 +26,6 @@ class AppModule {
     @Singleton
     fun context(application: Application): Context = application.applicationContext
 
-    private val BASE_URL = "https://api.nasa.gov"
-    private val API_KEY = "ItXjX7uV4euA35LozgIfhSIK1st5pYPfl1qAsFl0"
-    private val connectionTimeout: Int = 10000
 
     @Provides
     @Singleton
@@ -61,5 +61,4 @@ class AppModule {
     fun provideAuthApi(retrofit: Retrofit): NasaApi {
         return retrofit.create(NasaApi::class.java)
     }
-
 }
