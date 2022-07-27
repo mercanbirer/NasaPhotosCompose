@@ -73,16 +73,17 @@ fun NasaPhotosScreen(
                     items(items = photos) {
                         Card(
                             modifier = Modifier
-                                .padding(10.dp, 4.dp)
+                                .padding(30.dp, 20.dp)
                                 .fillMaxWidth()
                                 .fillMaxHeight(),
                             shape = RoundedCornerShape(18.dp),
                             elevation = 4.dp
                         ) {
+
                             Column(
                                 verticalArrangement = Arrangement.Center,
                                 modifier = Modifier
-                                    .padding(4.dp)
+                                    .padding(40.dp)
                                     .fillMaxWidth()
                             ) {
                                 Image(painter = rememberImagePainter(

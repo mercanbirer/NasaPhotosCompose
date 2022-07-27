@@ -5,15 +5,17 @@ import androidx.lifecycle.viewModelScope
 import com.example.nasaphotoscompose.di.Resource
 import com.example.nasaphotoscompose.model.NasaPhotos
 import com.example.nasaphotoscompose.usecase.NasaPhotosUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class NasaPhotosViewModel @Inject constructor(
-    private val usecase: NasaPhotosUseCase
-) : ViewModel() {
+@HiltViewModel
+class NasaPhotosViewModel  @Inject constructor(
+    private val usecase : NasaPhotosUseCase
+) : ViewModel(){
 
     private val _apiNasaPhotos = MutableStateFlow<Resource<NasaPhotos>>(Resource.Idle())
     var apiNasaPhotos: StateFlow<Resource<NasaPhotos>> = _apiNasaPhotos
